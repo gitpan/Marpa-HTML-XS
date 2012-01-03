@@ -11,7 +11,7 @@ use warnings;
 use Carp;
 
 use vars qw( $VERSION $STRING_VERSION );
-$VERSION        = '0.001_000';
+$VERSION        = '0.001_001';
 $STRING_VERSION = $VERSION;
 {
 ## no critic (BuiltinFunctions::ProhibitStringyEval)
@@ -20,8 +20,6 @@ $STRING_VERSION = $VERSION;
 }
 
 use Marpa::HTML::XS::Version;
-
-say join ' ', __FILE__, __LINE__;
 
 use Marpa::XS 1.002000;
 use Marpa::HTML 0.112000;
@@ -42,8 +40,10 @@ C<use Marpa::HTML::XS;>
 
 =head1 DESCRIPTION
 
-This module uses L<Marpa::HTML> and L<Marpa::XS>.
-The documentation is with those two modules.
+This module loads L<Marpa::HTML> with L<Marpa::XS>,
+or fails.
+The documentation on how to use each of 
+those two modules is part of their distributions.
 
 L<Marpa::HTML> by itself own chooses between L<Marpa::XS> and L<Marpa::PP>.
 L<Marpa::HTML> runs L<Marpa::XS> if possible, L<Marpa::PP> otherwise.
@@ -53,8 +53,8 @@ the cpantesters almost always run with L<Marpa::PP>.
 This makes it difficult for users to determine if
 an XS-powered L<Marpa::HTML> has been tested on their system.
 The lop-sided testing of L<Marpa::HTML>
-is also a major quality assurance for both
-L<Marpa::HTML> and L<Marpa::XS>.
+is also a major quality assurance issue
+for both L<Marpa::HTML> and L<Marpa::XS>.
 This module redresses the balance.
 
 =head1 AUTHOR
